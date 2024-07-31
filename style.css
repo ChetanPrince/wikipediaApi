@@ -35,7 +35,7 @@ p{
     width: 65%;
 }
 #search, #button{
-    padding: 4px;
+    padding: 10px;
     margin-right: 5px;
     border: none;
     border-radius: 7px;
@@ -61,4 +61,16 @@ p{
 #button:active{
     transform: translate(2px, 2px);
     box-shadow: none;
+}
+.result{
+    width: 100%;
+    padding: 16px;
+    margin: 16px 0;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.result:hover{
+    box-shadow: 0px 7px 29px 0px rgba(100,100,111,0.2);
 }
