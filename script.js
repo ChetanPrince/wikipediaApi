@@ -19,4 +19,18 @@ function searchWikipedia(searchTerm){
     }).catch(error =>alert("Error: " + error));
 }
 
+function displayResults(results){
+    output.innerHTML = "";
+    output.textContent = `Results Count : ${results.length}`;
+    results.forEach(result =>{
+        const resultElement = document.createElement("div");
+        resultElement.className = "result";
+        resultElement.innerHTML = `
+        <h3>${result.title}</h3>
+        <p>${result.snippet}</p>
+        <a href="https://en.wikipedia.org/?curid=${result.pageid}" traget="_blank">Read More</a>
+        `;
+        output.appendChild(resultElement);
+    })
+}
 });
