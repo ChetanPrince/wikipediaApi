@@ -10,5 +10,13 @@ if(searchTerm){
     searchWikipedia(searchTerm);
 }
 });
+function searchWikipedia(searchTerm){
+    const url = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=10&srsearch=${encodeURIComponent(searchTerm)}`;
+        fetch(url)
+        .then(response => response.json())
+        .then(data=>{
+        displayResults(data.query.search);
+    }).catch(error =>alert("Error: " + error));
+}
 
 });
